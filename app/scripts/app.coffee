@@ -8,8 +8,17 @@ define ['jquery', 'mousetrap', 'marionette', 'views/layout', 'views/form', 'mode
     app.form_object = new QueryModel
 
     app.addInitializer (options) ->
+      $body = $('body')
+      $body.addClass 'wadjet-body'
+      saved_body = $body.children().clone true
+
+      $body.html '<div id="wadjet-site-body"></div'
+
       layout = new Layout
-      $('body').prepend layout.render().$el
+      $body.prepend layout.render().$el
+
+      # TODO Скопировать все стили из body
+      $body.find('#wadjet-site-body').append saved_body
 
       form_view = new FormView model: app.form_object
       results_view = new ResultsView collection: app.results
