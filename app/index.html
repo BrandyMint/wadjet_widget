@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>webapp_template</title>
+        <title>MetaSearch widget</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -25,14 +25,24 @@
 
         <div class="container">
             <div class="jumbotron">
-                <h1>Awesome</h1>
-                <p><a class="btn btn-lg btn-success"
-                href="#">Splendid!</a></p>
-                <p class="custom-style">lorem ipsum</p>
-                <p class="another-custom-style">lorem ipsum</p>
+                <h1>MetaSearch widget</h1>
             </div>
-            <div class="backbone-container"></div>
         </div>
+
+        <script>
+(function(){
+  window.MetaSearchSettings = { api_url: 'http://localhost:3007', key: '%KEY%' };
+
+  var s=document.createElement('script');
+    s.type='text/javascript';
+    s.async=true;
+    s.src="http://3006.vkontraste.ru/scripts/metasearch_widget.js";
+
+  var x=document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s,x);
+})();
+</script>
+
+        <a href='/metasearch_widget.js'>/metasearch_widget.js</a>
 
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
