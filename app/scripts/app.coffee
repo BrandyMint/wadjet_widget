@@ -1,11 +1,7 @@
-define ['jquery', 'backbone', 'models/test', 'views/test'], ($, Backbone, TestModel, TestView) ->
+define ['jquery', 'views/container'], ($, ContainerView) ->
   class App
-    initialize: ->
-      console.log 'app starting...'
+    initialize: (options) ->
+      container = new ContainerView
+      $('body').prepend container.render().$el
 
-      model = new TestModel()
-      view = new TestView(model: model)
-
-      $('.backbone-container').html view.render().el
-
-      Backbone.history.start()
+      #container.show new MetalineView.new

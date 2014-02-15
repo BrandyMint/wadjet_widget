@@ -1,1 +1,0 @@
-window.alert 'metasearh widget'

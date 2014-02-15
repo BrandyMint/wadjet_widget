@@ -12,11 +12,8 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/app.css" />
         <!-- endbuild -->
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
+        <script src="bower_components/requirejs/require.js"></script>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -36,16 +33,13 @@
   var s=document.createElement('script');
     s.type='text/javascript';
     s.async=true;
-    s.src="http://3006.vkontraste.ru/scripts/metasearch_widget.js";
+    s.src="http://3006.vkontraste.ru/scripts/v1.js";
 
   var x=document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s,x);
 })();
 </script>
 
-        <a href='/metasearch_widget.js'>/metasearch_widget.js</a>
+   <a href='/scripts/v1.js'>/scripts/v1.js</a>
 
-        <!-- build:js scripts/main.js -->
-        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
-        <!-- endbuild -->
 </body>
 </html>
