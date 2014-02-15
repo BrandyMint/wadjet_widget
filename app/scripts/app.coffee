@@ -3,23 +3,24 @@ define ['jquery', 'marionette', 'views/layout', 'views/form', 'models/query', 'c
   ($, Marionette, Layout, FormView, QueryModel, ResultsCollection, ResultsView,
   Requester) ->
     app = new Marionette.Application
+    app.results = new ResultsCollection
+    app.results.url = '/results.json'
+    app.form_object = new QueryModel
 
     app.addInitializer (options) ->
       layout = new Layout
       $('body').prepend layout.render().$el
 
-      results = new ResultsCollection url: '/results.json'
-      form_object = new QueryModel
 
-      form_view = new FormView model: form_object
-      results_view = new ResultsView collection: results
+      form_view = new FormView model: app.form_object
+      results_view = new ResultsView collection: app.results
 
       layout.form.show form_view
       layout.results.show results_view
 
-      new Requester
-        form_object: form_object
-        results:     results
+      app.requester = new Requester
+        form_object: app.form_object
+        results:     app.results
         key:         options.key
 
     app.on "initialize:after", ->
@@ -32,4 +33,4 @@ define ['jquery', 'marionette', 'views/layout', 'views/form', 'models/query', 'c
       $('head').append css_link
         # TODO fetch json?
 
-    app
+    window.Wadjet = app

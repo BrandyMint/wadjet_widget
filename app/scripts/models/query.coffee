@@ -3,4 +3,4 @@ define [ 'underscore', 'backbone', 'stickit' ], (_, Backbone, Stickit) ->
 
   class QueryModel extends Backbone.Model
     defaults:
-      query: 'test model content'
+      query: 'строка запроса'

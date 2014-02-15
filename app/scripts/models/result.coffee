@@ -1,4 +1,4 @@
-define [ 'underscore', 'backbone', 'stickit' ], (_, Backbone, Stickit) ->
+define [ 'underscore', 'backbone' ], (_, Backbone ) ->
   'use strict'
 
   class ResultModel extends Backbone.Model

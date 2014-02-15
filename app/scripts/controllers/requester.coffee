@@ -6,10 +6,11 @@ define ['jquery', 'marionette'],
 
         @listenTo @form_object, 'change', @_update
 
-      _update: (model) ->
-        debugger
+      _update: ->
         @results.fetch
           data:
-            q: model.query
+            q: @form_object.get('query')
             key: @key
+          error: (a,b) ->
+            console.log 'Ошибка получения данных', a, b
 

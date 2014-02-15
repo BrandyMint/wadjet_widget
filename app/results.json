@@ -1,5 +1,5 @@
 [
-  {'text' => 'result1', 'url' => 'asdas', 'action'=>'default'},
-  {'text' => 'result2', 'url' => 'asdas', 'action'=>'default'},
-  {'text' => 'result3', 'url' => 'asdas', 'action'=>'default'},
+  {"id" : 1, "content" : "Владимир Григорьев: <em>«Не хотел покидать трек без медали»</em>", "url" : "http://ya.ru/", "action": "default"},
+  {"id" : 2, "content" : "Марии Комиссаровой <em>проводят операцию на позвоночнике</em>", "url" : "http://ya.ru/", "action": "default"},
+  {"id" : 3, "content" : "Российские хоккеисты в серии буллитов <em>проиграли США на Олимпиаде</em>", "url" : "http://ya.ru/", "action": "show"}
 ]

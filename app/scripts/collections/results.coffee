@@ -3,4 +3,3 @@ define [ 'underscore', 'backbone', 'models/result' ], (_, Backbone, ResultModel)
 
   class ResultsCollection extends Backbone.Collection
     model: ResultModel
-
