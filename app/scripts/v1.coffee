@@ -2,6 +2,7 @@
 'use strict'
 
 require.config
+  baseUrl: 'scripts/'
   shim:
     underscore:
       exports: '_'
@@ -14,17 +15,23 @@ require.config
     bootstrap:
       deps: ['jquery'],
       exports: 'jquery'
-  baseUrl: 'scripts/'
+    marionette:
+      deps: ['jquery', 'underscore', 'backbone']
+      exports: 'Marionette'
+    stickit:
+      deps: ['jquery', 'underscore', 'backbone']
+      exports: 'Stickit'
   paths:
     all: '.'
     jquery: '../bower_components/jquery/jquery'
     backbone: '../bower_components/backbone/backbone'
     underscore: '../bower_components/underscore/underscore'
     bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap'
+    marionette: '../bower_components/marionette/lib/backbone.marionette'
+    stickit: '../bower_components/backbone.stickit/backbone.stickit'
 
-require ['app'], (App) ->
+require ['app'], (app) ->
   # TODO избавиться от загрузки в лагловке
   unless window.MetaSearchSettings?
-    console.log "Не установлен window.MetaSearchSettings"
-  app = new App()
-  app.initialize window.MetaSearchSettings
+    console.log "!!! Не установлен window.MetaSearchSettings"
+  app.start window.MetaSearchSettings

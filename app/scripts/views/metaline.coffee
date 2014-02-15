@@ -1,5 +1,7 @@
-define ['backbone', 'templates/metaline'], (Backbone, template) ->
-  class MetalineView extends Backbone.View
-    render: ->
-      @$el.html template(@model.toJSON())
-      @
+define ['marionette', 'templates/metaline'], (Marionette, template) ->
+  class MetalineView extends Marionette.ItemView
+    template: -> template()
+    bindings:
+      '#metasearch-query': 'query'
+    onRender: ->
+      @stickit()
