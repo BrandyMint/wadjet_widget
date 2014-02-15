@@ -4,6 +4,7 @@ define ['jquery', 'marionette'],
       initialize: (options) ->
         { @form_object, @results, @key } = options
 
+        @listenTo @form_object, 'submit', @_update
         @listenTo @form_object, 'change', @_update
 
       _update: ->

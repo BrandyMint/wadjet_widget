@@ -3,11 +3,11 @@ define ['jquery', 'mousetrap', 'marionette', 'views/layout', 'views/form', 'mode
   ($, Mousetrap, Marionette, Layout, FormView, QueryModel, ResultsCollection, ResultsView,
   Requester) ->
     app = new Marionette.Application
-    app.results = new ResultsCollection
-    app.results.url = '/results.json'
-    app.form_object = new QueryModel
-
     app.addInitializer (options) ->
+      app.results = new ResultsCollection
+      app.results.url = options.api_url || '/results.json'
+      app.form_object = new QueryModel
+
       $body = $('body')
       $body.addClass 'wadjet-body'
       saved_body = $body.children().clone true

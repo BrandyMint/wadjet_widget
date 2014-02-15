@@ -12,6 +12,7 @@ define ['mousetrap', 'marionette', 'templates/form'], (Mousetrap, Marionette, te
       'click button' : 'onSubmit'
 
     onSubmit: (e) =>
+      @model.trigger 'submit'
       @model.trigger 'change'
       e.preventDefault()
       return false
