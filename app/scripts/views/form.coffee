@@ -4,7 +4,9 @@ define ['mousetrap', 'marionette', 'templates/form'], (Mousetrap, Marionette, te
     id: 'wadjet-form'
     template: template
     bindings:
-      '#wadjet-form-query': 'query'
+      '#wadjet-form-query':
+        observe: 'query'
+
     events:
       'keyup input'  : 'onKeyup'
       'click button' : 'onSubmit'
