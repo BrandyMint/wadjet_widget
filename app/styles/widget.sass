@@ -1,43 +1,104 @@
 @import 'include'
 
-$bg-color: #409aeb
+$color1: #36497C
+$color2: #96ACCC
+$color3: #DAE4EF
+$color4: #172039
+$color5: #A7A2A3
+
+$bg-color: $color1
 $text-color: white
-$height: 36px
+$font: 'Open Sans', sans-serif
+$height: 26px
+$margin: 10px
+
+$results_top: $height + $margin + 5px
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&subset=latin,cyrillic)
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css)
 
 .wadjet-body
   padding: 0
   margin: 0
 
+button.wadjet-fa-search
+  font-size: 22px
+  cursor: pointer
+  background-color: transparent
+  border: none
+  color: white
+  &:focus
+    outline: none
+
 #wadjet-layout
+  font-family: $font
   background-color: $bg-color
   color: $text-color
-  padding: 5px 0px
+  padding: 0px
 
   #wadjet-form-container
+    padding: 5px 0px
     form#wadjet-form
       input#wadjet-form-query
-        border-radius: $height/2
-        margin-left: 10px
-        margin-right: 10px
+        border: none
+        border-radius: 4px
+        // border-radius: $height/2
+        margin-left: $margin
+        margin-right: $margin
         width: 300px
         height: $height - 6
-        border: none
         padding: 5px 10px
-        font-size: 18px
-        background-color: lighten($bg-color,10)
-        color: $text-color
+        font-family: $font
+        font:
+          size: 16px
+          weight: 300
+        background-color: white
+        color: $color4
+        transition: width 1s, transform 1s
+        -webkit-transition: width 1s, -webkit-transform 1s
         &:focus
-          width: 100%
+          transition: width 1s, transform 1s
+          -webkit-transition: width 1s, -webkit-transform 1s
+          width: 400px
+          border: none
+          outline: none
+      &:hover, .active
+        input
+          transition: width 1s, transform 1s
+          -webkit-transition: width 1s, -webkit-transform 1s
+          width: 400px
+
   #wadjet-results-container
+    display: block
+    position: fixed
+    top: $results_top
+    right: 0
+    left: 0
+    opacity: 0.9
+    transition: opacity 1s
+    -webkit-transition: opacity 1s
     background-color: darken($bg-color, 10)
-    margin-top: 10px
+    //margin-top: 5px
+    &:hover
+      opacity: 1
+      transition: opacity 1s
+      -webkit-transition: opacity 1s
     ul#wadjet-results-list
+      border-top: $color5 1px solid
+      border-bottom: $color5 1px solid
+      font-family: $font
       padding: 5px 10px
       margin: 0
       li.wadjet-result
+        font-family: $font
         list-style-type: none
         padding-top: 10px
         padding-bottom: 10px
+        font-weight: 300
         a
           color: $text-color
+          text-decoration: none
+          &:hover
+            text-decoration: underline
+
 

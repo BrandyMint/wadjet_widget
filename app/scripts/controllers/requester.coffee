@@ -7,6 +7,7 @@ define ['jquery', 'marionette'],
         @listenTo @form_object, 'change', @_update
 
       _update: ->
+        console.log 'get results'
         query = @form_object.get('query')
         if query.length==0
           @results.reset()

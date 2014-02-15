@@ -6,7 +6,13 @@ define ['mousetrap', 'marionette', 'templates/form'], (Mousetrap, Marionette, te
     bindings:
       '#wadjet-form-query': 'query'
     events:
-      'keyup input' : 'onKeyup'
+      'keyup input'  : 'onKeyup'
+      'click button' : 'onSubmit'
+
+    onSubmit: (e) =>
+      @model.trigger 'change'
+      e.preventDefault()
+      return false
 
     onKeyup: (e) =>
       Mousetrap.trigger 'esc' if e.which == 27
