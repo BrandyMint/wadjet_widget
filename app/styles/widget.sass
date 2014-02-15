@@ -1,6 +1,32 @@
 @import 'include'
 
+$bg-color: #479feb
+$text-color: white
+$height: 36px
+
 #wadjet-layout
+  background-color: $bg-color
+  color: $text-color
+  padding: 5px 10px
+
   #wadjet-form-container
-    #wadjet-form
+    form#wadjet-form
+      height: $height
+      input#wadjet-form-query
+        width: 100%
+        height: $height - 6
+        border: none
+        font-size: 18px
+        background-color: lighten($bg-color,10)
+        color: $text-color
   #wadjet-results-container
+    ul#wadjet-results-list
+      padding: 0
+      margin: 0
+      li.wadjet-result
+        list-style-type: none
+        padding-top: 10px
+        padding-bottom: 10px
+        a
+          color: $text-color
+

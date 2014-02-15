@@ -11,7 +11,6 @@ define ['jquery', 'marionette', 'views/layout', 'views/form', 'models/query', 'c
       layout = new Layout
       $('body').prepend layout.render().$el
 
-
       form_view = new FormView model: app.form_object
       results_view = new ResultsView collection: app.results
 

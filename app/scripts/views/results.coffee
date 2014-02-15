@@ -4,3 +4,9 @@ define ['marionette', 'views/result', 'views/empty_results'], (Marionette, Resul
     id: 'wadjet-results-list'
     itemView: ResultView
     emptyView: EmptyResultsView
+
+    onAfterItemAdded: ->
+      @$el.fadeIn()
+
+    onCollectionRendered: ->
+      @$el.hide()
