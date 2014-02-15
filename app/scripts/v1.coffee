@@ -29,6 +29,7 @@ require.config
     bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap'
     marionette: '../bower_components/marionette/lib/backbone.marionette'
     stickit: '../bower_components/backbone.stickit/backbone.stickit'
+    spinjs:    '../bower_components/spinjs/spin'
     mousetrap: '../bower_components/mousetrap/mousetrap'
 
 require ['app'], (app) ->

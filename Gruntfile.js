@@ -193,7 +193,8 @@ module.exports = function (grunt) {
                         'backbone': '../../app/bower_components/backbone/backbone',
                         'marionette': '../../app/bower_components/marionette/lib/backbone.marionette',
                         'stickit': '../../app/bower_components/backbone.stickit/backbone.stickit',
-                        'mousetrap': '../../app/bower_components/mousetrap/mousetrap'
+                        'mousetrap': '../../app/bower_components/mousetrap/mousetrap',
+                        'spinjs':    '../../app/bower_components/spinjs/spin'
 
                     },
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
