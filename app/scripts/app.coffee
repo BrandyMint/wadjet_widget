@@ -1,6 +1,6 @@
-define ['jquery', 'marionette', 'views/layout', 'views/form', 'models/query', 'collections/results', 'views/results',
+define ['jquery', 'mousetrap', 'marionette', 'views/layout', 'views/form', 'models/query', 'collections/results', 'views/results',
   'controllers/requester'],
-  ($, Marionette, Layout, FormView, QueryModel, ResultsCollection, ResultsView,
+  ($, Mousetrap, Marionette, Layout, FormView, QueryModel, ResultsCollection, ResultsView,
   Requester) ->
     app = new Marionette.Application
     app.results = new ResultsCollection
@@ -21,6 +21,10 @@ define ['jquery', 'marionette', 'views/layout', 'views/form', 'models/query', 'c
         form_object: app.form_object
         results:     app.results
         key:         options.key
+
+      Mousetrap.bind 'esc', ->
+        app.results.reset []
+        app.form_object.set 'query', ''
 
     app.on "initialize:after", ->
       source = '/styles/widget.css'
