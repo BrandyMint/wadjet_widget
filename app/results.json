@@ -1,0 +1,5 @@
+[
+  {'text' => 'result1', 'url' => 'asdas', 'action'=>'default'},
+  {'text' => 'result2', 'url' => 'asdas', 'action'=>'default'},
+  {'text' => 'result3', 'url' => 'asdas', 'action'=>'default'},
+]

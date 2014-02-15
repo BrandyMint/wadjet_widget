@@ -187,6 +187,7 @@ module.exports = function (grunt) {
                     paths: {
                         'templates': '../../.tmp/scripts/templates',
                         'views': '../../.tmp/scripts/views',
+                        'controllers': '../../.tmp/scripts/controllers',
                         'jquery': '../../app/bower_components/jquery/jquery',
                         'underscore': '../../app/bower_components/underscore/underscore',
                         'backbone': '../../app/bower_components/backbone/backbone',
@@ -313,6 +314,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
+                        '<%= yeoman.dist %>/{,*/}*.json',
                         '<%= yeoman.dist %>/scripts/{,*/}*.js',
                         '<%= yeoman.dist %>/styles/{,*/}*.css',
                         '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',

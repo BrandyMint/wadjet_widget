@@ -1,5 +1,5 @@
 {
-  "name": "MetaSearch",
+  "name": "wadjet-widget",
   "version": "0.1.0",
   "dependencies": {
     "sass-bootstrap": "~3.0.0",

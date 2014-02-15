@@ -32,6 +32,6 @@ require.config
 
 require ['app'], (app) ->
   # TODO избавиться от загрузки в лагловке
-  unless window.MetaSearchSettings?
+  unless window.WadjetSettings?
     console.log "!!! Не установлен window.MetaSearchSettings"
-  app.start window.MetaSearchSettings
+  app.start window.WadjetSettings
