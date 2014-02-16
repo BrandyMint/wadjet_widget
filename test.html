@@ -1,0 +1,50 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Wadjet widget</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/4979bb6a.main.css">
+        <!--<script src="bower_components/requirejs/require.js"></script>-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Wadjet widget</h1>
+            </div>
+        </div>
+
+        <script>
+(function(){
+  window.WadjetSettings = { api_url: 'http://wadjet.cloudapp.net/search', key: '7383c6fc' };
+
+  var s=document.createElement('script');
+    s.type='text/javascript';
+    s.async=true;
+    //s.src="http://3006.vkontraste.ru/scripts/v1.js";
+    s.src="/v1.js";
+
+  var x=document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s,x);
+})();
+</script>
+
+
+   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Eye_of_Providence_%28icon%29.jpg/505px-Eye_of_Providence_%28icon%29.jpg">
+
+
+   <hr>
+
+   <a href="/v1.js">/v1.js</a>
+</body>
+</html>
