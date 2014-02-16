@@ -397,6 +397,7 @@ module.exports = (grunt) ->
     "jst"
     "haml"
     "compass:dist"
+    "autoprefixer"
     "useminPrepare"
     "requirejs"
     "imagemin"
