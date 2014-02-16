@@ -17365,7 +17365,7 @@ _.extend(Marionette.Module, {
     });
     return app.on("initialize:after", function() {
       var css_link, source;
-      source = '/styles/widget.css';
+      source = 'styles/widget.css';
       css_link = document.createElement("link");
       css_link.rel = "stylesheet";
       css_link.media = "screen, projection";
