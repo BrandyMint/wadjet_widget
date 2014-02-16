@@ -262,6 +262,11 @@ module.exports = (grunt) ->
     cssmin:
       dist:
         files:
+          "<%= yeoman.dist %>/styles/widget.css": [
+            ".tmp/styles/widget.css"
+            "<%= yeoman.app %>/styles/widget.css"
+          ]
+
           "<%= yeoman.dist %>/styles/main.css": [
             ".tmp/styles/{,*/}*.css"
             "<%= yeoman.app %>/styles/{,*/}*.css"
