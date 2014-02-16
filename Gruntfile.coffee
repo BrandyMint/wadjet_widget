@@ -179,10 +179,38 @@ module.exports = (grunt) ->
         
         # Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
         options:
+
+          # v1 нормально работает только если не делать
+          # его именем
+          name: 'v1'
           
           # `name` and `out` is set by grunt-usemin
           baseUrl: ".tmp/scripts"
           optimize: "none"
+          #mainConfigFile: "./requirejs_config2.js"
+          #  mainConfigFile: "./app/scripts/v1.coffee"
+          dir: "<%= yeoman.dist %>"
+          #out: "build/v1.js"
+          shim:
+            underscore:
+              exports: '_'
+            backbone:
+              deps: [ 'underscore', 'jquery' ]
+              exports: 'Backbone'
+            bootstrap:
+              deps: ['jquery'],
+              exports: 'jquery'
+            marionette:
+              deps: ['jquery', 'underscore', 'backbone', 'backbone.babysitter']
+              exports: 'Marionette'
+            stickit:
+              deps: ['jquery', 'underscore', 'backbone']
+              exports: 'Stickit'
+            # http://stackoverflow.com/questions/16852101/how-to-load-backbone-babysitter
+            'backbone.babysitter':
+              deps: ['backbone', 'underscore']
+              exports: 'backbone.babysitter'
+
           paths:
             templates: "../../.tmp/scripts/templates"
             views: "../../.tmp/scripts/views"
@@ -190,10 +218,13 @@ module.exports = (grunt) ->
             jquery: "../../app/bower_components/jquery/jquery"
             underscore: "../../app/bower_components/underscore/underscore"
             backbone: "../../app/bower_components/backbone/backbone"
-            marionette: "../../app/bower_components/marionette/lib/backbone.marionette"
+            marionette: "../../app/bower_components/marionette/lib/core/amd/backbone.marionette"
+            #marionette: "../../app/bower_components/marionette/lib/backbone.marionette"
             stickit: "../../app/bower_components/backbone.stickit/backbone.stickit"
             mousetrap: "../../app/bower_components/mousetrap/mousetrap"
             spinjs: "../../app/bower_components/spinjs/spin"
+            'backbone.babysitter': '../../app/bower_components/backbone.babysitter/lib/amd/backbone.babysitter'
+            'backbone.wreqr': '../../app/bower_components/backbone.wreqr/lib/amd/backbone.wreqr'
 
           
           # TODO: Figure out how to make sourcemaps work with grunt-usemin
@@ -204,6 +235,7 @@ module.exports = (grunt) ->
           preserveLicenseComments: false
           useStrict: true
           wrap: true
+          findNestedDependencies: true
 
     
     #uglify2: {} // https://github.com/mishoo/UglifyJS2
@@ -371,7 +403,7 @@ module.exports = (grunt) ->
     "htmlmin"
     "concat"
     "cssmin"
-    "uglify"
+    # "uglify"
     "copy"
     "rev"
     "usemin"

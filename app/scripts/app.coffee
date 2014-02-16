@@ -1,7 +1,5 @@
-define ['jquery', 'mousetrap', 'marionette', 'views/layout', 'views/form', 'models/query', 'collections/results', 'views/results',
-  'controllers/requester'],
-  ($, Mousetrap, Marionette, Layout, FormView, QueryModel, ResultsCollection, ResultsView,
-  Requester) ->
+define ['jquery', 'mousetrap', 'marionette', 'views/layout', 'views/form', 'models/query', 'collections/results', 'views/results', 'controllers/requester'],
+  ($, Mousetrap, Marionette, Layout, FormView, QueryModel, ResultsCollection, ResultsView, Requester) ->
     app = new Marionette.Application
     app.addInitializer (options) ->
       app.results = new ResultsCollection
@@ -44,5 +42,3 @@ define ['jquery', 'mousetrap', 'marionette', 'views/layout', 'views/form', 'mode
       css_link.href = source
       $('head').append css_link
         # TODO fetch json?
-
-    window.Wadjet = app

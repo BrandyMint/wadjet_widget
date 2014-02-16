@@ -16,11 +16,16 @@ require.config
       deps: ['jquery'],
       exports: 'jquery'
     marionette:
-      deps: ['jquery', 'underscore', 'backbone']
+      deps: ['jquery', 'underscore', 'backbone', 'backbone.babysitter']
       exports: 'Marionette'
     stickit:
       deps: ['jquery', 'underscore', 'backbone']
       exports: 'Stickit'
+    # http://stackoverflow.com/questions/16852101/how-to-load-backbone-babysitter
+    'backbone.babysitter': 
+      deps: ['backbone', 'underscore']
+      exports: 'Backbone.Babysitter'
+
   paths:
     all: '.'
     jquery: '../bower_components/jquery/jquery'
@@ -31,9 +36,15 @@ require.config
     stickit: '../bower_components/backbone.stickit/backbone.stickit'
     spinjs:    '../bower_components/spinjs/spin'
     mousetrap: '../bower_components/mousetrap/mousetrap'
+    'backbone.babysitter': '../bower_components/Backbone.BabySitter/lib/amd/backbone.babysitter'
 
 require ['app'], (app) ->
   # TODO избавиться от загрузки в лагловке
   unless window.WadjetSettings?
     console.log "!!! Не установлен window.MetaSearchSettings"
+
   app.start window.WadjetSettings
+  window.Wadjet = app
+
+#require ['backbone.babysitter'], ->
+  #v = new Backbone.ChildViewContainer()
