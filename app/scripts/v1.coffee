@@ -36,7 +36,7 @@ require.config
     stickit: '../bower_components/backbone.stickit/backbone.stickit'
     spinjs:    '../bower_components/spinjs/spin'
     mousetrap: '../bower_components/mousetrap/mousetrap'
-    'backbone.babysitter': '../bower_components/Backbone.BabySitter/lib/amd/backbone.babysitter'
+    'backbone.babysitter': '../bower_components/backbone.babysitter/lib/amd/backbone.babysitter'
 
 require ['app'], (app) ->
   # TODO избавиться от загрузки в лагловке

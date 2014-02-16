@@ -34,7 +34,7 @@ define ['jquery', 'mousetrap', 'marionette', 'views/layout', 'views/form', 'mode
         app.form_object.set 'query', ''
 
     app.on "initialize:after", ->
-      source = '/styles/widget.css'
+      source = 'styles/widget.css'
       css_link = document.createElement "link"
       css_link.rel = "stylesheet"
       css_link.media = "screen, projection"
